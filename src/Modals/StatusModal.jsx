@@ -30,7 +30,7 @@ const StatusModal = ({ status, onClose }) => {
     }, 2000);
   return (
     <div className=' inset-0 bg-black bg-opacity-90 flex items-center flex-col justify-start py-7 gap-10 z-50 fixed'>
-         <button onClick={onClose} className='text-xl absolute text-white top-10 right-10 bg-stone-50 bg-opacity-10  rounded-full hover:rotate-90 transition-all duration-300'>
+         <button onClick={onClose} className='text-xl absolute  top-10 right-10 p-3 text-red-500 bg-stone-50 bg-opacity-10  rounded-full hover:rotate-90 transition-all duration-300'>
             <AiOutlineClose />
           </button>
           <div className='w-[40%] p-1  flex gap-1'>
@@ -51,9 +51,9 @@ const StatusModal = ({ status, onClose }) => {
                <button className='px-2'><BsThreeDotsVertical/></button>
             </div>
         </div>
-      <div className='bg-gray-900 bg-opacity-90 p-4 rounded-xl w-[50%] py-4 px-2 max-w-lg '>
+      <div className='   rounded-xl w-[50%]  max-w-lg '>
         <div className='flex justify-center w-full h-96 transition-all duration-300 items-center flex-col gap-3'>
-            <img src={status.statusImages[statusCount].url} alt="hwllo" />
+            <img src={status.statusImages[statusCount].url} alt="hwllo" className='h-full w-auto' />
             
          
         </div>

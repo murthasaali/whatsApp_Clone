@@ -15,7 +15,7 @@ function ChatContactsUI({theme}) {
     <div className={`${theme==="dark"?"bg-white text-stone-900":"bg-black text-stone-300"} w-full h-full  px-4 flex flex-col gap-3`}>
       <nav className='py-6 px-3 flex justify-between w-full items-end'>
         <h1 className={`${theme==="dark"?"text-green-600 ":"text-white "} text-xl font-bold h-fit`}>Chats</h1>
-        <div className='flex gap-3 text-stone-500 text-2xl justify-center items-center'>
+        <div className='flex gap-3 text-stone-500 text-xl justify-center items-center'>
           <img src='https://static.whatsapp.net/rsrc.php/v3/ye/r/W2MDyeo0zkf.png' className='h-5 w-5' />
           <HiOutlineFolderPlus />
           <PiDotsThreeOutlineVerticalFill />
@@ -43,7 +43,7 @@ function ChatContactsUI({theme}) {
             <div className='w-full justify-between flex items-center h-full'>
               <div className='flex flex-col justify-end h-full'>
                 <h1 className='text-xl'>{item.name}</h1>
-                <h4 className='text-xs text-blue-200'>{item.chatHistory[0].message}</h4>
+                <h4 className={`text-xs   ${theme==="dark"?"text-blue-500":"text-blue-200"}`}>{item.chatHistory[0].message}</h4>
               </div>
               <div className='flex flex-col justify-end items-end h-full p-1'>
                 <h1 className='text-xs text-green-400'>{item.timestamp}</h1>

@@ -147,7 +147,7 @@ function ChatingUI({theme}) {
         </div>
       </div>
 
-      <ChatInput />
+      <ChatInput theme={theme} />
     </div>
   );
 }

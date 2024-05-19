@@ -26,9 +26,9 @@ function Communities({theme}) {
           <div key={item.id} className={`w-full h-fit ${theme==="dark"?" bg-green-400 bg-opacity-40 text-black":"bg-stone-50 text-white bg-opacity-15"}  flex flex-col transition-all duration-500 ease-in-out px-2 py-2 rounded-xl   gap-2 ${currentContent.name===item.name?"scale-105":""}`} onClick={()=>dispatch(updateChatUiContent(item))}>
             <div className='w-full  h-fit flex justify-center items-center gap-3'>
             <img
-              src={item.profileImage ?  'https://img.freepik.com/free-photo/positive-young-caucasian-male-with-pleasant-friendly-smile-shows-white-teeth-rejoices-new-stage-life-wears-casual-striped-sweater-round-spectacles-stands-alone-against-pink-wall_273609-14966.jpg?t=st=1715860507~exp=1715864107~hmac=09801c5fdde9d9ec1355cad128d52673512db016437ed27120271e9a4a9784af&w=1060':item.profileImage}
+              src={item.profileImage ?  item.profileImage:"https://img.freepik.com/free-photo/positive-young-caucasian-male-with-pleasant-friendly-smile-shows-white-teeth-rejoices-new-stage-life-wears-casual-striped-sweater-round-spectacles-stands-alone-against-pink-wall_273609-14966.jpg?t=st=1715860507~exp=1715864107~hmac=09801c5fdde9d9ec1355cad128d52673512db016437ed27120271e9a4a9784af&w=1060"}
               alt={item.name}
-              className='w-12 h-12 rounded-xl object-cover border-[3px] border-green-500 '
+              className='w-12 h-12 rounded-xl object-cover '
               />
             <div className='w-full justify-between flex items-center  h-full'>
               <div className='flex flex-col justify-center h-full'>
