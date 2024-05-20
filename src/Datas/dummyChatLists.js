@@ -2,7 +2,7 @@ const dummyData = [
   {
     id: 1,
     statusPosted: true,
-    name: "John Doe",
+    name: "John Doe 🤍",
     profilePic: "https://img.freepik.com/free-photo/cheerful-indian-businessman-smiling-closeup-portrait-jobs-career-campaign_53876-129417.jpg?t=st=1715862612~exp=1715866212~hmac=a28bc2564b13adf842bdc8b51fa65e0438bcec08e93907841be689275422d323&w=1060",
     chatHistory:[
       { "sender": "John Doe", "message": "Hey, how are you?", "timestamp": "2:30 PM" },
@@ -52,9 +52,9 @@ const dummyData = [
     id: 4,
     statusPosted: true,
     name: "Emily Davis",
-    profilePic: "https://randomuser.me/api/portraits/women/4.jpg",
+    profilePic: "https://randomuser.me/api/portraits/women/7.jpg",
     chatHistory: [
-      { sender: "Emily Davis", message: "See you soon! 😁😁😀", timestamp: "11:15 AM" },
+      { sender: "Emily Davis", message: "See you soon! ", timestamp: "11:15 AM" },
       { sender: "Me", message: "Looking forward to it!", timestamp: "11:17 AM" },
       { sender: "Emily Davis", message: "Same here!", timestamp: "11:18 AM" }
     ]

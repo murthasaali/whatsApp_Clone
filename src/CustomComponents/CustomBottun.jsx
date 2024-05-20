@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import Tooltip from './ToolTip';
 
-function CustomButton({ icon, buttonHandle, content }) {
+function CustomButton({ icon, buttonHandle, content,round,position }) {
   const theme = useSelector((state) => state.chatui.theme);
   const sidebarButtonContent = useSelector((state) => state.chatui.sidebarButton);
 
@@ -15,7 +15,7 @@ function CustomButton({ icon, buttonHandle, content }) {
   `;
 
   return (
-    <Tooltip text={content}>
+    <Tooltip text={content} round={round} position>
       <button
         onClick={() => buttonHandle(content)}
         className={buttonClass}

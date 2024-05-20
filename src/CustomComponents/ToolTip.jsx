@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 
-const Tooltip = ({ text, children }) => {
+const Tooltip = ({ text, children,round ,position}) => {
     const theme=useSelector((state)=>state.chatui.theme)
 
   const [show, setShow] = useState(false);
@@ -14,7 +14,7 @@ const Tooltip = ({ text, children }) => {
     >
       {children}
       {show && (
-        <div className={` ${theme==="dark"?"text-white bg-stone-900":"text-black bg-gray-100"} absolute bottom-0 left-full mb-2 px-2 py-1 text-sm  z-50  shadow-lg rounded-full `}>
+        <div className={` ${theme==="dark"?"text-white bg-stone-900":"text-black bg-gray-100"} absolute bottom-0 left-full  mb-2 px-2 py-1 text-sm  z-50  shadow-lg rounded-${round?round:"full"} `}>
           {text}
         </div>
       )}

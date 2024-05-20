@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import { IoVideocamOutline } from "react-icons/io5";
 import { RiCheckDoubleFill } from "react-icons/ri";
 import { FaDownload } from "react-icons/fa6";
+import CustomButton from "../CustomComponents/CustomBottun";
 
 function ChatingUI({theme}) {
   const currentContent = useSelector((state) => state.chatui.chatUiContent);
@@ -38,15 +39,19 @@ function ChatingUI({theme}) {
           <div>{currentContent.name}</div>
         </div>
         <div className="flex gap-6 justify-center items-center">
+          
+          <div className="px-2 py-2 rounded-full flex justify-center items-center  h-fit hover:w-56 w-24 border gap-2   transition-all duration-500">
+            <FaSearch />
+            <input type="text" className='w-full bg-transparent outline-none' placeholder="search"/>
+            
+          </div>
           <button className="w-fit px-3 py-1 border rounded-full text-2xl">
             <IoVideocamOutline />
           </button>
-          <button className="px-2 py-2 rounded-full h-fit">
-            <FaSearch />
-          </button>
-          <button className="px-2 py-2 rounded-full h-fit bg-slate-200 bg-opacity-15">
+          
+          <CustomButton content={"drop"}  icon={<button className="px-2 py-2 rounded-full h-fit bg-slate-200 bg-opacity-15">
             <PiDotsThreeOutlineVerticalFill />
-          </button>
+          </button>}/>
         </div>
       </nav>
       <div

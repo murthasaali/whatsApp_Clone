@@ -41,7 +41,8 @@ const StatusModal = ({ status, onClose }) => {
         <div className='w-14 h-14 p-[3px] bg-green-500 rounded-full'>
               <img src={status.profilePic} className='w-full h-full overflow-hidden rounded-full border-[3px] border-stone-700' />
             </div>
-            <div className='w-[50%] h-full  text-green-400 flex flex-col justify-start items-start gap-2'>
+            <div className='w-[50%] h-full  text-green-400 flex
+             flex-col justify-start items-start gap-2'>
               <h1>{status.name}</h1>
               <h1 className='font-thin text-xs text-stone-400'>{timeAgo(status.statusImages[statusCount].timestamp)}</h1>
             </div>
