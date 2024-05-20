@@ -10,6 +10,7 @@ import { updateChatUiContent } from '../Redux/Features/ChatUiSlice';
 function ChatContactsUI({theme}) {
   const [inputData,setInputData]=useState("")
   const [filteredData,setFilteredData]=useState([])
+  const dispatch = useDispatch()
   useEffect(() => {
     
   
@@ -20,8 +21,16 @@ function ChatContactsUI({theme}) {
   }, [inputData])
   
   const currentContent=useSelector((state)=>state.chatui.chatUiContent)
+
+  useEffect(() => {
+    
   
-  const dispatch = useDispatch()
+    return () => {
+      dispatch(updateChatUiContent({}))
+    }
+  }, [])
+  
+  
   return (
     <div className={`${theme==="dark"?"bg-white text-stone-900":"bg-black text-stone-300"} w-full h-full  px-4 flex flex-col gap-3`}>
       <nav className='py-6 px-3 flex justify-between w-full items-end'>

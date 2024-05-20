@@ -7,6 +7,7 @@ import { IoVideocamOutline } from "react-icons/io5";
 import { RiCheckDoubleFill } from "react-icons/ri";
 import { FaDownload } from "react-icons/fa6";
 import CustomButton from "../CustomComponents/CustomBottun";
+import DownLoadUi from "./DownLoadUi";
 
 function ChatingUI({theme}) {
   const currentContent = useSelector((state) => state.chatui.chatUiContent);
@@ -27,9 +28,15 @@ function ChatingUI({theme}) {
     }, 2000); 
   };
 
+  const isEmptyObject = (obj) => {
+    return Object.keys(obj).length === 0 && obj.constructor === Object;
+  };
+
   return (
-    <div className={` ${theme==="dark"?"text-black ":"text-white"} w-full h-full flex flex-col justify-start items-center`}>
-      <nav className="w-full h-[100px] md:p-4 p-1 flex justify-between items-center">
+    <div className={`${theme === "dark" ? "text-black" : "text-white"} w-full h-full flex flex-col justify-start items-center `}>
+      {isEmptyObject(currentContent) ? (
+        <DownLoadUi />
+      ) :<> <nav className="w-full h-[100px] md:p-4 p-1 flex justify-between items-center">
         <div className="flex gap-3 justify-center font-bold items-center">
           <img
             src={currentContent.profilePic}
@@ -153,7 +160,7 @@ function ChatingUI({theme}) {
         </div>
       </div>
 
-      <ChatInput theme={theme} />
+      <ChatInput theme={theme} /></>}
     </div>
   );
 }

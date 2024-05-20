@@ -20,7 +20,7 @@ function Communities({theme}) {
         <div className='text-stone-600'>create new community</div>
       </div>
      
-      <div className='text-white flex flex-col gap-3 hide-scrollbar overflow-y-auto'>
+      <div className='text-white flex flex-col gap-3 hide-scrollbar w-full overflow-y-auto p-6'>
         {communityData.map((item) => (
             <>
           <div key={item.id} className={`w-full h-fit ${theme==="dark"?" bg-green-400 bg-opacity-40 text-black":"bg-stone-50 text-white bg-opacity-15"}  flex flex-col transition-all duration-500 ease-in-out px-2 py-2 rounded-xl   gap-2 ${currentContent.name===item.name?"scale-105":""}`} onClick={()=>dispatch(updateChatUiContent(item))}>

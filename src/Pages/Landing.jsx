@@ -29,7 +29,7 @@ function Landing() {
                       sidebarButtonContent==="settings"&&(<Settings theme={theme}/>)    
                     }
                 </div>
-                <div className={`${theme==="dark"?"bg-stone-500 bg-opacity-40":"bg-stone-500 bg-opacity-15"} w-[65%] md:flex hidden rounded-xl h-full   `}>
+                <div className={`${theme==="dark"?"bg-stone-500 bg-opacity-30":"bg-stone-500 bg-opacity-15"} w-[65%] md:flex hidden rounded-xl h-full   `}>
                   <ChatingUI theme={theme}/>
                 </div>
             </div>

@@ -5,7 +5,7 @@ const chatuiSlice = createSlice({
   name: 'chatui',
   initialState: {
     sidebarButton: "chats",
-    chatUiContent: dummyData[0]||{},
+    chatUiContent:{},
     theme:"dark",
   },
   reducers: {
