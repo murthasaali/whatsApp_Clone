@@ -35,7 +35,8 @@ const dummyData = [
       { sender: "Jane Smith", message: "Let's catch up later.", timestamp: "1:45 PM" },
       { sender: "Me", message: "Sure, sounds good!", timestamp: "1:46 PM" },
       { sender: "Jane Smith", message: "Great, talk to you then.", timestamp: "1:50 PM" }
-    ]
+    ],
+    locked:true
   },
   {
     id: 3,

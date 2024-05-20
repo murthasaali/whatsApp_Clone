@@ -6,6 +6,7 @@ import dummyData from '../Datas/dummyChatLists';
 import { FaMeta } from "react-icons/fa6";
 import { useDispatch, useSelector } from 'react-redux';
 import { updateChatUiContent } from '../Redux/Features/ChatUiSlice';
+import { BiLock } from 'react-icons/bi';
 
 function ChatContactsUI({theme}) {
   const [inputData,setInputData]=useState("")
@@ -74,8 +75,9 @@ function ChatContactsUI({theme}) {
         ))):(
           dummyData.map((item) => (
             <div key={item.id} 
-            className={`w-full h-fit ${theme==="dark"?"bg-green-400 bg-opacity-40 ":"bg-stone-50 bg-opacity-15 "} transition-all duration-500 ease-in-out px-2 py-2 rounded-xl flex gap-6 ${currentContent.name===item.name?"scale-105":""}`} 
+            className={`w-full h-fit ${theme==="dark"?"bg-green-400 bg-opacity-40 ":"bg-stone-50 bg-opacity-15 "} transition-all relative duration-500 ease-in-out px-2 py-2 rounded-xl flex gap-6 ${currentContent.name===item.name?"scale-105":""}`} 
             onClick={()=>dispatch(updateChatUiContent(item))}>
+              {item.locked&&<div className='absolute top-2 right-2 text-stone-500'><BiLock/> </div>}
               <img
                 src={item.profilePic ? item.profilePic : 'https://img.freepik.com/free-photo/positive-young-caucasian-male-with-pleasant-friendly-smile-shows-white-teeth-rejoices-new-stage-life-wears-casual-striped-sweater-round-spectacles-stands-alone-against-pink-wall_273609-14966.jpg?t=st=1715860507~exp=1715864107~hmac=09801c5fdde9d9ec1355cad128d52673512db016437ed27120271e9a4a9784af&w=1060'}
                 alt={item.name}

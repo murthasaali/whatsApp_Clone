@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { HiSpeakerWave } from "react-icons/hi2";
 import { useDispatch, useSelector } from 'react-redux';
 import { updateChatUiContent } from '../Redux/Features/ChatUiSlice';
-import { FaUsers } from "react-icons/fa";
+import { FaPlus, FaUsers } from "react-icons/fa";
 import statusListData from '../Datas/StatusClod';
 import StatusModal from '../Modals/StatusModal';
 import { timeAgo } from '../Functions/dateConvertor';
@@ -27,7 +27,11 @@ function StatusList({theme}) {
       <h1 className={`${theme==="dark"?"text-green-600 ":"text-white "} text-xl font-bold h-fit`}>Status</h1>
       </nav>
       <div className='flex w-full p-3 gap-6 text-white rounded-xl justify-start items-center'>
-        <button className='bg-green-500 bg-opacity-80 text-3xl p-2 h-14 w-14 rounded-full'></button>
+        <button className='bg-green-500 bg-opacity-80 text-3xl  h-14 w-14 rounded-full relative'>
+          <div className='p-1 bg-white rounded-full text-xs absolute bottom-[-5px] text-black right-{-4px}'><FaPlus/></div>
+
+        <img className='w-full h-full object-cover rounded-full' src={"https://img.freepik.com/free-photo/model-wearing-beautiful-shade-clothing_23-2151428054.jpg?t=st=1716107279~exp=1716110879~hmac=c861acc9c6fb04c130bf720c20f665121b14eb0369c1d28cdb6209d8d25e30b0&w=360"} alt="" />
+        </button>
         <div className='w-fit flex flex-col gap-1 h-full justify-center items-start'>
           <div className={`${theme==="dark"?"text-black":"text-white "}`}>My Status</div>
           <div className='text-xs text-stone-400'>no update</div>

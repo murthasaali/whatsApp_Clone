@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import ChatInput from "./ChatInput";
 import { PiDotsThreeOutlineVerticalFill } from "react-icons/pi";
 import { FaLock, FaSearch } from "react-icons/fa";
@@ -8,11 +8,14 @@ import { RiCheckDoubleFill } from "react-icons/ri";
 import { FaDownload } from "react-icons/fa6";
 import CustomButton from "../CustomComponents/CustomBottun";
 import DownLoadUi from "./DownLoadUi";
+import LockUi from "./LockUi";
 
 function ChatingUI({theme}) {
   const currentContent = useSelector((state) => state.chatui.chatUiContent);
   const chatHistory = currentContent.chatHistory;
   const [downloading, setDownloading] = useState({});
+  const [ unlock,setUnlock]=useState(false)
+  const [ error,setError]=useState(false)
   const backgroundImage =
   theme === 'dark'
     ?
@@ -31,6 +34,23 @@ function ChatingUI({theme}) {
   const isEmptyObject = (obj) => {
     return Object.keys(obj).length === 0 && obj.constructor === Object;
   };
+  const handleLock = (password) => {
+    if (password === "1234") {
+      setUnlock(true);
+      setError(false);
+    } else {
+      setError(true);
+    }
+  };
+
+  useEffect(() => {
+    
+  
+    return () => {
+      setUnlock(true)
+    }
+  }, [])
+  
 
   return (
     <div className={`${theme === "dark" ? "text-black" : "text-white"} w-full h-full flex flex-col justify-start items-center `}>
@@ -63,13 +83,18 @@ function ChatingUI({theme}) {
         </div>
       </nav>
       <div
-        className="w-full h-full hide-scrollbar overflow-y-scroll"
+        className="w-full h-full hide-scrollbar overflow-y-scroll relative"
         style={{
           backgroundImage: backgroundImage,
 
           backgroundSize: "cover",
         }}
       >
+          {currentContent.locked && !unlock && (
+              <div className='w-full h-full backdrop-blur-md  flex justify-center items-center absolute z-50'>
+                <LockUi Submit={handleLock} error={error} />
+              </div>
+            )}
         <div className={`${theme==="dark"?"bg-stone-50 bg-opacity-10":"bg-stone-950 bg-opacity-75"} w-full h-fit flex flex-col  gap-4 min-h-full p-3`}>
           <div className="w-full h-fit flex justify-center">
             <div className="w-fit p-1 px-2 bg-stone-50 bg-opacity-10 text-stone-400 rounded-sm">
@@ -89,6 +114,7 @@ function ChatingUI({theme}) {
               }`}
               key={index}
             >
+              
               {item.image ? (
                 <div
                   className={`${theme==="dark"?"bg-green-400 bg-opacity-60 ":"bg-green-400 bg-opacity-20"} text-sm h-fit flex justify-start items-start p-3 min-w-[100px] min-h-fit max-w-[300px] rounded-xl gap-2 flex-col ${
